@@ -82,7 +82,8 @@ export default {
       }).load({
         path:
           // "https://test2-1303915342.cos.ap-shanghai.myqcloud.com/guang_fu/s.glb",
-          "http://192.168.3.8:8080/file?path=project/linkpoint/&key=202309051046153290651001202376",
+          // "http://192.168.3.8:8080/file?path=project/linkpoint/&key=202309051046153290651001202376",
+          "./assets/s.lt",
         dom: this.$refs["three-scene"],
       });
 

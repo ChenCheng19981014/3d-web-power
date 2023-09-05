@@ -230,8 +230,8 @@ class ResolveJson {
         /**
          * 基本和其他设备
          */
-        console.log("基本的设备数据:", this.baseMachineMap);
-        console.log("其他的设备数据:", this.otherMachineMap);
+        console.log("基本的模型数据:", this.baseMachineMap);
+        console.log("其他的模型数据:", this.otherMachineMap);
     }
 
     // 3.0 遍历添加---模型(依次添加)
@@ -256,7 +256,6 @@ class ResolveJson {
         };
         fn(0).then();
 
-        console.log('场景的模型:', this.showMachineList);
 
     }
 
@@ -302,6 +301,8 @@ class ResolveJson {
             modelEx.add(m);
             // 克隆的模型数组
             cloneModelArr.push(map);
+
+            console.log('克隆的模型有哪一些:', m.name, m);
             // 有隐藏电池数量字段的---- 隐藏显示 电池数量
             if (!battery_Hide_Num) return;
             // 基本的电池信息以及对应的模型
@@ -312,7 +313,9 @@ class ResolveJson {
             };
             // 隐藏显示电池数量
             this.hideBattery(batteryGroupInfo);
+
         });
+
 
 
         // 遍历设置位置
