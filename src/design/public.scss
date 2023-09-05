@@ -1,0 +1,33 @@
+//公共样式
+
+// *::-webkit-scrollbar{
+//     width: 2px;
+//     background: rgb(231, 231, 231);
+// }
+
+// *::-webkit-scrollbar-thumb{
+//     background-color: rgb(180, 180, 180);
+// }
+
+.c-title {
+  font-size: 14px;
+  color: #1d2129;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.c-description {
+  font-size: 14px;
+  color: #4e5969;
+  margin-bottom: 24px;
+  line-height: 22px;
+}
+.eye-icon {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding-right: 17px;
+  .eyestyle {
+    cursor: pointer;
+  }
+}

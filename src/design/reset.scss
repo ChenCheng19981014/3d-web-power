@@ -1,0 +1,34 @@
+// 重置样式
+
+@font-face {
+    font-family: "hansan";
+    src: url("./font/苹方黑体-准-简.ttf");
+}
+
+@font-face {
+    font-family: "din";
+    src: url("./font/D-DIN-Bold.ttf");
+}
+
+@font-face {
+    font-family: "ns";
+    src: url("./font/胡晓波男神体2.0.otf");
+}
+
+.number{
+    font-family: "din";
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "hansan";
+    box-sizing: border-box;
+}
+
+.price-input::-webkit-outer-spin-button, .price-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    display:none;
+}
+ 
+
