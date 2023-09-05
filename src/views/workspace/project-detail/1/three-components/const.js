@@ -67,11 +67,11 @@ export const MachineWidthMap = {
     /**
      * 储能逆变器
      */
-    Cn_Nbq_GSE0050T: { width: 7.5, len: 0, height: 2.25,power:'50kw' },
-    Cn_Nbq_GSE0100T: { width: 8, len: 0, height: 2.25,power:'100kw' }, // 没有
-    Cn_Nbq_GSE0150T: { width: 8, len: 0, height: 2.25,power:'150kw'},
-    Cn_Nbq_GSE0250T: { width: 12, len: 0, height: 2.25,power:'250kw' },
-    Cn_Nbq_GSE0500T: { width: 16, len: 0, height: 2.25,power:'500kw' },
+    Cn_Nbq_GSE0050T: { width: 7.5, len: 0, height: 2.25, power: '50kw' },
+    Cn_Nbq_GSE0100T: { width: 8, len: 0, height: 2.25, power: '100kw' }, // 没有
+    Cn_Nbq_GSE0150T: { width: 8, len: 0, height: 2.25, power: '150kw' },
+    Cn_Nbq_GSE0250T: { width: 12, len: 0, height: 2.25, power: '250kw' },
+    Cn_Nbq_GSE0500T: { width: 16, len: 0, height: 2.25, power: '500kw' },
 
     /**
      *  电池模组 海基 零探  户用  工商业
@@ -105,17 +105,17 @@ export const MachineWidthMap = {
     /**
      * 集装箱
      */
-    container_10: { width: 24.38, len: 30.48, height: 2.896 ,type:'10尺'},
-    container_20: { width: 24.38, len: 60.58, height: 2.896 ,type:'20尺' },
-    container_30: { width: 24.38, len: 91.44, height: 2.896 ,type:'30尺' },
-    container_40: { width: 24.38, len: 121.92, height: 2.896 ,type:'40尺' },
-    container_45: { width: 24.38, len: 137.16, height: 2.896 ,type:'45尺' },
+    container_10: { width: 24.38, len: 30.48, height: 2.896, type: '10尺' },
+    container_20: { width: 24.38, len: 60.58, height: 2.896, type: '20尺' },
+    container_30: { width: 24.38, len: 91.44, height: 2.896, type: '30尺' },
+    container_40: { width: 24.38, len: 121.92, height: 2.896, type: '40尺' },
+    container_45: { width: 24.38, len: 137.16, height: 2.896, type: '45尺' },
 
-    container_10_top: { width: 24.38, len: 30.48, height: 2.896 ,type:'10尺' },
-    container_20_top: { width: 24.38, len: 60.58 + 2.02, height: 2.896 ,type:'20尺' },
-    container_30_top: { width: 24.38, len: 91.44, height: 2.896 ,type:'30尺' },
-    container_40_top: { width: 24.38, len: 121.92 + 2.02, height: 2.896 ,type:'40尺' },
-    container_45_top: { width: 24.38, len: 137.16 + 2.02, height: 2.896 ,type:'45尺' },
+    container_10_top: { width: 24.38, len: 30.48, height: 2.896, type: '10尺' },
+    container_20_top: { width: 24.38, len: 60.58 + 2.02, height: 2.896, type: '20尺' },
+    container_30_top: { width: 24.38, len: 91.44, height: 2.896, type: '30尺' },
+    container_40_top: { width: 24.38, len: 121.92 + 2.02, height: 2.896, type: '40尺' },
+    container_45_top: { width: 24.38, len: 137.16 + 2.02, height: 2.896, type: '45尺' },
 };
 
 /**
@@ -186,6 +186,7 @@ export const mechineTypeStyle = {
     '汇流': 'icon-dingpaiicon_kongzhihuiliuxiang',
     '电池': 'icon-dingpaiicon_dianchicu'
 }
+
 //对象反转
 export const machineReverseMapFn = (obj) => {
     return Object.keys(obj).reduce((acc, key) => {

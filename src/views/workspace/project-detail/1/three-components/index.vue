@@ -7,7 +7,8 @@
           e.stopPropagation();
         }
       "
-      class="btn">
+      class="btn"
+    >
       <div class="watch-cards" style="display: none;">
         <div class="cards-top">
           <div class="cards-left">
@@ -27,7 +28,9 @@
 
 <script>
 import Change from "./Change";
-import { RunScene } from "run-scene-v2";
+import Engine from "run-scene-v2";
+const { RunScene, Utils } = Engine;
+let scene = null;
 export default {
   props: {
     isFullScreen: {
@@ -39,19 +42,22 @@ export default {
   },
   watch: {
     isFullScreen() {
-      const {width, height} = this.$refs["three-scene"].getBoundingClientRect();
+      const { width, height } = this.$refs[
+        "three-scene"
+      ].getBoundingClientRect();
       this.runScene && this.runScene.setSize(width, height);
     },
     tableData() {
-      console.log(this.tableData, 'Change TableData');
+      // console.log("传输的信息:", this.tableData);
+
       this.change && this.change.resolveJson.init(this.tableData);
+
       // immediate: true;
     },
   },
   data() {
     return {
       change: null,
-      runScene: null,
     };
   },
   mounted() {
@@ -61,9 +67,33 @@ export default {
   methods: {
     // 加载场景
     loadScene() {
+      scene = new RunScene({
+        render2: true,
+        render3: true,
+        renderConfig: {
+          // 是否允许设置模型位置后自动渲染最新效果
+          matrixAutoUpdate: true,
+          scriptFrame: 60,
+          event: {
+            ignores: ["resize"],
+          },
+        },
+        static: false,
+      }).load({
+        path:
+          // "https://test2-1303915342.cos.ap-shanghai.myqcloud.com/guang_fu/s.glb",
+          "http://192.168.3.8:8080/file?path=project/linkpoint/&key=202309051046153290651001202376",
+        dom: this.$refs["three-scene"],
+      });
+
+      this.change = new Change(scene, this.onDone);
+
+      return;
+
       this.runScene = new RunScene({
         // path: "./assets/shit.glb",
-        path: "https://test2-1303915342.cos.ap-shanghai.myqcloud.com/guang_fu/s.glb",
+        path:
+          "https://test2-1303915342.cos.ap-shanghai.myqcloud.com/guang_fu/s.glb",
         rootDom: this.$refs["three-scene"],
         options: {
           // mode: "editor",
@@ -84,6 +114,7 @@ export default {
       this.change = new Change(this.runScene, this.onDone);
       this.change && this.change.resolveJson.init(this.tableData);
     },
+
     onDone() {
       // this.change.resolveJson.init([
       //   { id: 1, name: "逆变器GSE0100T", num: 2, remake: "", select: true },
@@ -107,7 +138,7 @@ export default {
 };
 </script>
 
-<style lang="less" scoped>
+<style scoped>
 .three-scene {
   width: 100%;
   height: 100%;
