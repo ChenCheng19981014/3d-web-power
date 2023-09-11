@@ -302,7 +302,7 @@ class ResolveJson {
             // 克隆的模型数组
             cloneModelArr.push(map);
 
-            console.log('克隆的模型有哪一些:', m.name, m);
+            console.log('克隆的模型有哪一些名称:', m.name, m);
             // 有隐藏电池数量字段的---- 隐藏显示 电池数量
             if (!battery_Hide_Num) return;
             // 基本的电池信息以及对应的模型
@@ -315,8 +315,6 @@ class ResolveJson {
             this.hideBattery(batteryGroupInfo);
 
         });
-
-
 
         // 遍历设置位置
         cloneModelArr.map((mode) => t.resolveJson.setPosition(mode));
