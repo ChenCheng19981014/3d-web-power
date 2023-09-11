@@ -42,16 +42,12 @@ export default {
   },
   watch: {
     isFullScreen() {
-      const { width, height } = this.$refs[
-        "three-scene"
-      ].getBoundingClientRect();
-      this.runScene && this.runScene.setSize(width, height);
+      // 自适应
+      this.resize();
     },
     tableData() {
-      // console.log("传输的信息:", this.tableData);
-
       this.change && this.change.resolveJson.init(this.tableData);
-
+      // console.log("传输的信息:", this.tableData);
       // immediate: true;
     },
   },
@@ -63,6 +59,9 @@ export default {
   mounted() {
     // 加载场景
     this.loadScene();
+
+    // 场景 自适应
+    window.addEventListener("resize", this.resize);
   },
   methods: {
     // 加载场景
@@ -115,7 +114,14 @@ export default {
       this.change = new Change(this.runScene, this.onDone);
       this.change && this.change.resolveJson.init(this.tableData);
     },
-
+    // 自适应
+    resize(x, runScene) {
+      console.log("自适应-自适应");
+      const { width, height } = document
+        .querySelector(".three-scene")
+        .getBoundingClientRect();
+      scene.setSize(width, height);
+    },
     onDone() {
       // this.change.resolveJson.init([
       //   { id: 1, name: "逆变器GSE0100T", num: 2, remake: "", select: true },
